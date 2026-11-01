@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import './productDetails.css'
 import SlideProduct from '../../components/slideProducts/slideProduct'
 
-import ProductDetailsLoading from './productDetailsLoading';
+import ProductDetailsLoading from '../../../src/page/productDetails/ProductDetailsLoading';
 import SlideProductLoading from '../../components/slideProducts/SlideProductLoading';
 import Productimages from './Productimages';
 import ProductInfo from './ProductInfo';

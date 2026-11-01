@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import HeroSlider from '../../components/header/HeroSlider'
 import './Home.css'
 import SlideProduct from '../../components/slideProducts/slideProduct'
+import SlideProductLoading from '../../components/slideProducts/SlideProductLoading'
+import PageTransition from '../../components/PageTransition'
 
 const categories = [
     "smartphones",
@@ -42,24 +44,30 @@ function Home() {
 
     console.log(Products)
     return (
-        <div>
-            <HeroSlider />
+        <PageTransition>
+            <div>
+                <HeroSlider />
 
-            {loading ? (
-                <p>Loading ....</p>
-            ) : (
-                categories.map((category) => (
-                    <SlideProduct key={category} data={Products[category]} title={category.replace("-", " ")} />
+                {loading ? (
+                    categories.map((category) => (
 
+                        <SlideProductLoading key={category} />
+                    ))
 
-
-                ))
-
-            )}
-
+                ) : (
+                    categories.map((category) => (
+                        <SlideProduct key={category} data={Products[category]} title={category.replace("-", " ")} />
 
 
-        </div>
+
+                    ))
+
+                )}
+
+
+
+            </div>
+        </PageTransition>
     )
 }
 

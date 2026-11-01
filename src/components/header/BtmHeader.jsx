@@ -22,6 +22,12 @@ function BtmHeader() {
 
     const [categories, setCategories] = useState([]);
     const [isCategoryOpen, setIsCategoryOpen] = useState(false)
+
+    useEffect(() => {
+        setIsCategoryOpen(false)
+    }, [location])
+
+
     useEffect(() => {
         fetch('https://dummyjson.com/products/categories')
             .then((res) => res.json())
@@ -45,7 +51,7 @@ function BtmHeader() {
 
                         <div className={`category_nav_list ${isCategoryOpen ? "active" : ""}`}>
                             {categories.map((category) => (
-                                <Link key={category.slug} to={category.slug}> {category.name}</Link>
+                                <Link key={category.slug} to={`category/${category.slug}`}> {category.name}</Link>
                             ))}
                         </div>
 

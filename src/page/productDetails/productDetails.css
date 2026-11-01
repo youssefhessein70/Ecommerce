@@ -89,6 +89,14 @@
     font-size: 16px;
     border-radius: 2px;
     padding: 12px 15px;
+    border: 1px solid var(--main_color);
+    transition: 0.3s ease-in-out;
+}
+
+.item_details .details_item .btn.in-cart {
+    background: transparent;
+    color: var(--main_color);
+    pointer-events: none;
 }
 
 .item_details .details_item .btn svg {
@@ -122,4 +130,23 @@
 .item_details .details_item .icons svg:hover {
     fill: var(--white_color);
     transition: 0.3s;
+}
+
+
+.loading_Item .item_details .imgs_item {
+
+    height: 600px;
+
+}
+
+.loading_Item .item_details .details_item {
+    height: 600px;
+    padding-top: 100px;
+}
+
+
+.loading_Item .item_details .details_item h5 {
+    margin-bottom: 50px;
+    height: 30px;
+
 }

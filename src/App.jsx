@@ -4,6 +4,11 @@ import React from "react";
 import Home from "./page/home/Home";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./page/productDetails/productDetails";
+import Cart from "./page/cart/Cart";
+import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/ScrollToTop";
+import { AnimatePresence } from "framer-motion";
+import CategoryPage from "./page/CategoryPage/CategoryPage";
 
 
 function App() {
@@ -13,13 +18,25 @@ function App() {
       <header>
         <TopHeader />
         <BtmHeader />
-
       </header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-      </Routes>
+      <Toaster position="bottom-right" toastOptions={{
+        style: {
+          background: '#e9e9e9',
+          borderRadius: '5px',
+          padding: '14px'
+        }
+      }} />
+
+      <ScrollToTop />
+      <AnimatePresence>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
+        </Routes>
+      </AnimatePresence>
 
     </>
   )

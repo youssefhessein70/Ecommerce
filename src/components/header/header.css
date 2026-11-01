@@ -1,10 +1,18 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: var(--white_color);
+}
+
 .top_header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
     padding: 15px;
-    /* بدل 15px 0 عشان المحتوى ما يلزقش في الحافة */
 }
 
 
@@ -15,9 +23,7 @@
 
 .top_header .search_box {
     flex: 1;
-    /* ياخد المساحة الباقية */
     max-width: 500px;
-    /* وما يزيدش عن 500 على الشاشات الكبيرة */
     min-width: 0;
     display: flex;
     align-items: center;
@@ -80,7 +86,7 @@
 
 
 /*Responsive top header*/
-@media (max-width: 768px) {
+@media (max-width: 915px) {
     .top_header .container {
         flex-wrap: wrap;
     }
@@ -206,4 +212,3 @@
 }
 
 
-@media (max-width: 768px) {}

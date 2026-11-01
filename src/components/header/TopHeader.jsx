@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from '../../img/logo2.png'
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import './header.css'
+import { CartContext } from "../context/CartContext";
 
 
- 
+
 
 function TopHeader() {
+    const { cartItems } = useContext(CartContext);
     return (
-        
+
         <div className="top_header">
             <div className="container">
                 <Link className="logo" to="/" > <img src={logo} alt="logoS" /></Link>
@@ -28,8 +30,10 @@ function TopHeader() {
 
                     </div>
                     <div className="icon">
-                        <TiShoppingCart />
-                        <span className="count">0</span>
+                        <Link to="/cart">
+                            <TiShoppingCart />
+                            <span className="count">{cartItems.length}</span>
+                        </Link>
 
 
                     </div>

@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import banner1 from '../../img/banner_Hero1.jpg';
+import banner2 from '../../img/banner_Hero2.jpg';
+import banner3 from '../../img/banner_Hero3.jpg';
 
 
 // Import Swiper styles
@@ -29,7 +32,7 @@ function HeroSlider() {
                                 <p>windows Xp/10/7/8 ps3, Tv Box</p>
                                 <Link to="/" className="btn">Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero1.jpg" alt="slider hero 1" />
+                            <img src={banner1} alt="slider hero 1" />
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="content">
@@ -38,7 +41,7 @@ function HeroSlider() {
                                 <p>windows Xp/10/7/8 ps3, Tv Box</p>
                                 <Link to="/" className="btn">Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero2.jpg" alt="slider hero 1" />
+                            <img src={banner2} alt="slider hero 2" />
                         </SwiperSlide> <SwiperSlide>
                             <div className="content">
                                 <h4>Introducing the new</h4>
@@ -46,7 +49,7 @@ function HeroSlider() {
                                 <p>windows Xp/10/7/8 ps3, Tv Box</p>
                                 <Link to="/" className="btn">Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero3.jpg" alt="slider hero 1" />
+                            <img src={banner3} alt="slider hero 3" />
                         </SwiperSlide>
 
                     </Swiper>

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 function Product({ item }) {
 
     const navigate = useNavigate()
-    const { cartItems, addToCart } = useContext(CartContext)
+    const { cartItems, addToCart, addToFavorites, favorites, removeFromFavorites } = useContext(CartContext)
 
     const isInCart = cartItems.some(i => i.id === item.id)
 
@@ -30,6 +30,19 @@ function Product({ item }) {
             , { duration: 3500 }
         )
     }
+
+    // favorites 
+    const isInFav = favorites.some(i => i.id === item.id)
+    const handelAddToFav = () => {
+        if (isInFav) {
+            removeFromFavorites(item.id)
+            toast.error(`${item.title} Removed from favorites`)
+        } else {
+            addToFavorites(item)
+            toast.success(`${item.title} added To favorites`)
+        }
+    }
+
 
     return (
         <div className={`product ${isInCart ? 'in-cart' : ''}`}>
@@ -56,7 +69,7 @@ function Product({ item }) {
 
                 <div className="icons">
                     <span className='btn_addtocart' onClick={() => handelAddToCart()}><FaCartArrowDown /></span>
-                    <span><FaRegHeart /></span>
+                    <span className={`${isInFav ? "in-fav" : ""}`} onClick={handelAddToFav}><FaRegHeart /></span>
                     <span><FaShare /></span>
                 </div>
             </Link>

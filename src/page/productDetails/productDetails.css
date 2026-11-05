@@ -97,6 +97,15 @@
     background: transparent;
     color: var(--main_color);
     pointer-events: none;
+
+}
+
+.item_details .details_item .icons span.in-fav {
+    background: var(--main_color);
+}
+
+.item_details .details_item .icons span.in-fav svg {
+    fill: var(--white_color);
 }
 
 .item_details .details_item .btn svg {

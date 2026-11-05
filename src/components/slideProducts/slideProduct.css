@@ -147,6 +147,13 @@
     cursor: pointer;
 }
 
+.product .icons span.in-fav {
+    background: var(--main_color);
+}
+
+.product .icons span.in-fav svg {
+    fill: var(--white_color);
+}
 
 .loading_SlideProduct .top_slide {
     height: 105px;

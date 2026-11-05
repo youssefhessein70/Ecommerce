@@ -1,4 +1,4 @@
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -212,3 +212,35 @@ header{
 }
 
 
+/* Search Box*/
+
+
+.searchBox_Container {
+
+    position: relative;
+}
+
+.suggestions {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    list-style: none;
+    border: 1px solid var(--border_color);
+}
+
+.suggestions li {
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid var(--border_color);
+}
+
+
+.suggestions li span {
+    font-size: 14px;
+}
+
+.suggestions li img {
+    width: 30px;
+}
